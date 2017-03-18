@@ -10,9 +10,9 @@
 
 
 /**
- * CModelEvent class.
+ * CModelEvent 类。
  *
- * CModelEvent represents the event parameters needed by events raised by a model.
+ * CModelEvent 表示模型发起事件所需的参数。
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.base

@@ -11,7 +11,7 @@
 Yii::import('CHtml',true);
 
 /**
- * CErrorHandler handles uncaught PHP errors and exceptions.
+ * CErrorHandler 处理未捕获的PHP错误和异常。
  *
  * It displays these errors using appropriate views based on the
  * nature of the error and the mode the application runs at.
@@ -162,8 +162,8 @@ class CErrorHandler extends CApplicationComponent
 	}
 
 	/**
-	 * Handles the exception.
-	 * @param Exception $exception the exception captured
+	 * 异常处理。
+	 * @param Exception $exception 捕获的异常
 	 */
 	protected function handleException($exception)
 	{
@@ -223,7 +223,7 @@ class CErrorHandler extends CApplicationComponent
 
 	/**
 	 * Handles the PHP error.
-	 * @param CErrorEvent $event the PHP error event
+	 * @param CErrorEvent $event PHP 错误事件
 	 */
 	protected function handleError($event)
 	{
@@ -310,7 +310,7 @@ class CErrorHandler extends CApplicationComponent
 
 	/**
 	 * Returns the exact trace where the problem occurs.
-	 * @param Exception $exception the uncaught exception
+	 * @param Exception $exception 未捕获的异常
 	 * @return array the exact trace where the problem occurs
 	 */
 	protected function getExactTrace($exception)
@@ -327,7 +327,7 @@ class CErrorHandler extends CApplicationComponent
 	}
 
 	/**
-	 * Renders the view.
+	 * 渲染视图。
 	 * @param string $view the view name (file name without extension).
 	 * See {@link getViewFile} for how a view file is located given its name.
 	 * @param array $data data to be passed to the view
@@ -516,10 +516,10 @@ class CErrorHandler extends CApplicationComponent
 
 	/**
 	 * Renders the source code around the error line.
-	 * @param string $file source file path
+	 * @param string $file 源文件路径
 	 * @param integer $errorLine the error line number
 	 * @param integer $maxLines maximum number of lines to display
-	 * @return string the rendering result
+	 * @return string 渲染结果
 	 */
 	protected function renderSourceCode($file,$errorLine,$maxLines)
 	{

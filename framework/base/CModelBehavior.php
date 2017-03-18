@@ -36,31 +36,31 @@ class CModelBehavior extends CBehavior
 	}
 
 	/**
-	 * Responds to {@link CModel::onAfterConstruct} event.
+	 * 响应 {@link CModel::onAfterConstruct} 事件。
 	 * Override this method and make it public if you want to handle the corresponding event
 	 * of the {@link CBehavior::owner owner}.
-	 * @param CEvent $event event parameter
+	 * @param CEvent $event 事件参数
 	 */
 	protected function afterConstruct($event)
 	{
 	}
 
 	/**
-	 * Responds to {@link CModel::onBeforeValidate} event.
+	 * 响应 {@link CModel::onBeforeValidate} 事件。
 	 * Override this method and make it public if you want to handle the corresponding event
 	 * of the {@link owner}.
 	 * You may set {@link CModelEvent::isValid} to be false to quit the validation process.
-	 * @param CModelEvent $event event parameter
+	 * @param CModelEvent $event 事件参数
 	 */
 	protected function beforeValidate($event)
 	{
 	}
 
 	/**
-	 * Responds to {@link CModel::onAfterValidate} event.
+	 * 响应 {@link CModel::onAfterValidate} 事件。
 	 * Override this method and make it public if you want to handle the corresponding event
 	 * of the {@link owner}.
-	 * @param CEvent $event event parameter
+	 * @param CEvent $event 事件参数
 	 */
 	protected function afterValidate($event)
 	{

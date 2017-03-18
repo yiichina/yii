@@ -9,7 +9,7 @@
  */
 
 /**
- * CErrorEvent represents the parameter for the {@link CApplication::onError onError} event.
+ * CErrorEvent 表示 {@link CApplication::onError onError} 参数的事件。
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.base
@@ -18,29 +18,29 @@
 class CErrorEvent extends CEvent
 {
 	/**
-	 * @var string error code
+	 * @var string 错误代码
 	 */
 	public $code;
 	/**
-	 * @var string error message
+	 * @var string 错误信息
 	 */
 	public $message;
 	/**
-	 * @var string error message
+	 * @var string 错误文件
 	 */
 	public $file;
 	/**
-	 * @var string error file
+	 * @var string 错误行号
 	 */
 	public $line;
 
 	/**
-	 * Constructor.
-	 * @param mixed $sender sender of the event
-	 * @param string $code error code
-	 * @param string $message error message
-	 * @param string $file error file
-	 * @param integer $line error line
+	 * 构造器。
+	 * @param mixed $sender 事件发起者
+	 * @param string $code 错误代码
+	 * @param string $message 错误信息
+	 * @param string $file 错误文件
+	 * @param integer $line 错误行号
 	 */
 	public function __construct($sender,$code,$message,$file,$line)
 	{

@@ -9,7 +9,7 @@
  */
 
 /**
- * CException represents a generic exception for all purposes.
+ * CException 表示用于所有目的一般异常。
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.base

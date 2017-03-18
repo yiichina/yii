@@ -9,22 +9,22 @@
  */
 
 /**
- * CStatePersister implements a file-based persistent data storage.
+ * CStatePersister 实现一个基于文件的持久数据存储。 
  *
- * It can be used to keep data available through multiple requests and sessions.
+ * 它可以用来保持多个请求或会话的数据。 
  *
- * By default, CStatePersister stores data in a file named 'state.bin' that is located
- * under the application {@link CApplication::getRuntimePath runtime path}.
- * You may change the location by setting the {@link stateFile} property.
+ * 默认，CStatePersister 存储数据在一个名字叫 'state.bin' 文件中
+ * 它位于应用程序指定的 {@link CApplication::getRuntimePath runtime path} 下。
+ * 你可以通过设置 {@link stateFile} 属性来改变它的位置。
  *
  * To retrieve the data from CStatePersister, call {@link load()}. To save the data,
  * call {@link save()}.
  *
- * Comparison among state persister, session and cache is as follows:
+ * 持久数据，会话和缓存之间的比较如下: 
  * <ul>
- * <li>session: data persisting within a single user session.</li>
- * <li>state persister: data persisting through all requests/sessions (e.g. hit counter).</li>
- * <li>cache: volatile and fast storage. It may be used as storage medium for session or state persister.</li>
+ * <li>session: 单个用户的会话持久数据。</li>
+ * <li>state persister: 所有请求的/会话的持久数据（例如，点击统计）。</li>
+ * <li>cache: 不稳定并快速的存诸。它可的使用介于会话和持久数据之间。</li>
  * </ul>
  *
  * Since server resource is often limited, be cautious if you plan to use CStatePersister
@@ -54,9 +54,9 @@ class CStatePersister extends CApplicationComponent implements IStatePersister
 	public $cacheID='cache';
 
 	/**
-	 * Initializes the component.
-	 * This method overrides the parent implementation by making sure {@link stateFile}
-	 * contains valid value.
+	 * 初始化这个组件。
+	 * 这个方法重载了父类的实现，
+	 * 添加了一个 {@link stateFile} 的有效值。
 	 */
 	public function init()
 	{
@@ -70,8 +70,8 @@ class CStatePersister extends CApplicationComponent implements IStatePersister
 	}
 
 	/**
-	 * Loads state data from persistent storage.
-	 * @return mixed state data. Null if no state data available.
+	 * 从持久存储加载状态数据。
+	 * @return mixed 状态数据。如果状态数据不可用返回 null。
 	 */
 	public function load()
 	{

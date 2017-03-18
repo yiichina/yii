@@ -9,7 +9,7 @@
  */
 
 /**
- * CExceptionEvent represents the parameter for the {@link CApplication::onException onException} event.
+ * CExceptionEvent 表示 {@link CApplication::onException onException} 参数的事件。
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.base
@@ -18,14 +18,14 @@
 class CExceptionEvent extends CEvent
 {
 	/**
-	 * @var CException the exception that this event is about.
+	 * @var CException 关于这个事件的异常
 	 */
 	public $exception;
 
 	/**
-	 * Constructor.
-	 * @param mixed $sender sender of the event
-	 * @param CException $exception the exception
+	 * 构造器。
+	 * @param mixed $sender 事件的发起者
+	 * @param CException $exception 异常
 	 */
 	public function __construct($sender,$exception)
 	{

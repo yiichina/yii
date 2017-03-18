@@ -9,10 +9,10 @@
  */
 
 /**
- * CBehavior is a convenient base class for behavior classes.
+ * CBehavior 是所有行为类的基类。
  *
- * @property CComponent $owner The owner component that this behavior is attached to.
- * @property boolean $enabled Whether this behavior is enabled.
+ * @property CComponent $owner 此行为被附加的所有者组件。
+ * @property boolean $enabled 此行为是否被启用。
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.base
@@ -23,7 +23,7 @@ class CBehavior extends CComponent implements IBehavior
 	private $_owner;
 
 	/**
-	 * Declares events and the corresponding event handler methods.
+	 * 声明事件和相应事件的处理方法。
 	 * The events are defined by the {@link owner} component, while the handler
 	 * methods by the behavior class. The handlers will be attached to the corresponding
 	 * events when the behavior is attached to the {@link owner} component; and they
@@ -37,7 +37,7 @@ class CBehavior extends CComponent implements IBehavior
 	}
 
 	/**
-	 * Attaches the behavior object to the component.
+	 * 对组件附加行为对象。
 	 * The default implementation will set the {@link owner} property
 	 * and attach event handlers as declared in {@link events}.
 	 * This method will also set {@link enabled} to true.
@@ -52,7 +52,7 @@ class CBehavior extends CComponent implements IBehavior
 	}
 
 	/**
-	 * Detaches the behavior object from the component.
+	 * 从组件中分离行为对象。
 	 * The default implementation will unset the {@link owner} property
 	 * and detach event handlers declared in {@link events}.
 	 * This method will also set {@link enabled} to false.
@@ -68,7 +68,7 @@ class CBehavior extends CComponent implements IBehavior
 	}
 
 	/**
-	 * @return CComponent the owner component that this behavior is attached to.
+	 * @return CComponent 此行为被连接到该所有者的组件。
 	 */
 	public function getOwner()
 	{
@@ -76,7 +76,7 @@ class CBehavior extends CComponent implements IBehavior
 	}
 
 	/**
-	 * @return boolean whether this behavior is enabled
+	 * @return boolean 行为是否被启用。
 	 */
 	public function getEnabled()
 	{
@@ -84,7 +84,7 @@ class CBehavior extends CComponent implements IBehavior
 	}
 
 	/**
-	 * @param boolean $value whether this behavior is enabled
+	 * @param boolean $value 行为是否被启用。
 	 */
 	public function setEnabled($value)
 	{

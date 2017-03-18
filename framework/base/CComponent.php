@@ -9,7 +9,7 @@
  */
 
 /**
- * CComponent is the base class for all components.
+ * CComponent 是用于所有组件的基类。
  *
  * CComponent implements the protocol of defining, using properties and events.
  *
@@ -99,7 +99,7 @@ class CComponent
 	 * $value=$component->propertyName;
 	 * $handlers=$component->eventName;
 	 * </pre>
-	 * @param string $name the property name or event name
+	 * @param string $name 属性名称或事件名称
 	 * @return mixed the property value, event handlers attached to the event, or the named behavior
 	 * @throws CException if the property or event is not defined
 	 * @see __set
@@ -139,7 +139,7 @@ class CComponent
 	 * $this->propertyName=$value;
 	 * $this->eventName=$callback;
 	 * </pre>
-	 * @param string $name the property name or the event name
+	 * @param string $name 属性名称或事件名称t
 	 * @param mixed $value the property value or callback
 	 * @return mixed
 	 * @throws CException if the property/event is not defined or the property is read only.

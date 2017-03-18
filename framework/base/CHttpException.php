@@ -9,7 +9,7 @@
  */
 
 /**
- * CHttpException represents an exception caused by invalid operations of end-users.
+ * CHttpException 表示由终端用户的非法操作异常。
  *
  * The HTTP error code can be obtained via {@link statusCode}.
  * Error handlers may use this status code to decide how to format the error page.
@@ -21,15 +21,15 @@
 class CHttpException extends CException
 {
 	/**
-	 * @var integer HTTP status code, such as 403, 404, 500, etc.
+	 * @var integer HTTP 状态码，比如 403，404，500，等等。
 	 */
 	public $statusCode;
 
 	/**
-	 * Constructor.
-	 * @param integer $status HTTP status code, such as 404, 500, etc.
-	 * @param string $message error message
-	 * @param integer $code error code
+	 * 构造器
+	 * @param integer $status HTTP 状态码，比如 403，404，500，等等。
+	 * @param string $message 错误信息
+	 * @param integer $code 错误代码
 	 */
 	public function __construct($status,$message=null,$code=0)
 	{

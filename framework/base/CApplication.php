@@ -9,19 +9,19 @@
  */
 
 /**
- * CApplication is the base class for all application classes.
+ * CApplication 是所有应用程序类的基类。
  *
  * An application serves as the global context that the user request
  * is being processed. It manages a set of application components that
  * provide specific functionalities to the whole application.
  *
- * The core application components provided by CApplication are the following:
+ * 所提供的核心应用组件如下：
  * <ul>
- * <li>{@link getErrorHandler errorHandler}: handles PHP errors and
- *   uncaught exceptions. This application component is dynamically loaded when needed.</li>
- * <li>{@link getSecurityManager securityManager}: provides security-related
- *   services, such as hashing, encryption. This application component is dynamically
- *   loaded when needed.</li>
+ * <li>{@link getErrorHandler errorHandler}: 处理PHP错误和错误异常。
+ *   这个应用组件在需要时动态加载。</li>
+ * <li>{@link getSecurityManager securityManager}: 提供安全相关的服务，
+ *   例如，哈希，加密功能。
+ *   这个应用组件在需要时动态加载。</li>
  * <li>{@link getStatePersister statePersister}: provides global state
  *   persistence method. This application component is dynamically loaded when needed.</li>
  * <li>{@link getCache cache}: provides caching feature. This application component is
@@ -86,7 +86,7 @@
 abstract class CApplication extends CModule
 {
 	/**
-	 * @var string the application name. Defaults to 'My Application'.
+	 * @var string 应用程序名称。默认为 'My Application'。
 	 */
 	public $name='My Application';
 	/**
@@ -114,15 +114,15 @@ abstract class CApplication extends CModule
 	private $_homeUrl;
 
 	/**
-	 * Processes the request.
+	 * 处理请求。
 	 * This is the place where the actual request processing work is done.
 	 * Derived classes should override this method.
 	 */
 	abstract public function processRequest();
 
 	/**
-	 * Constructor.
-	 * @param mixed $config application configuration.
+	 * 构造器。
+	 * @param mixed $config 应用程序配置。
 	 * If a string, it is treated as the path of the file that contains the configuration;
 	 * If an array, it is the actual configuration information.
 	 * Please make sure you specify the {@link getBasePath basePath} property in the configuration,
@@ -172,7 +172,7 @@ abstract class CApplication extends CModule
 
 
 	/**
-	 * Runs the application.
+	 * 运行应用程序。
 	 * This method loads static application components. Derived classes usually overrides this
 	 * method to do more application-specific tasks.
 	 * Remember to call the parent implementation so that static application components are loaded.
@@ -188,7 +188,7 @@ abstract class CApplication extends CModule
 	}
 
 	/**
-	 * Terminates the application.
+	 * 终止应用程序。
 	 * This method replaces PHP's exit() function by calling
 	 * {@link onEndRequest} before exiting.
 	 * @param integer $status exit status (value 0 means normal exit while other values mean abnormal exit).
@@ -226,7 +226,7 @@ abstract class CApplication extends CModule
 	}
 
 	/**
-	 * Returns the unique identifier for the application.
+	 * 返回应用程序唯一的标识。
 	 * @return string the unique identifier for the application.
 	 */
 	public function getId()

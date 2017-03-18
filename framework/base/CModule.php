@@ -13,7 +13,7 @@
  *
  * CModule mainly manages application components and sub-modules.
  *
- * @property string $id The module ID.
+ * @property string $id 模块 ID。
  * @property string $basePath The root directory of the module. Defaults to the directory containing the module class.
  * @property CAttributeCollection $params The list of user-defined parameters.
  * @property string $modulePath The directory that contains the application modules. Defaults to the 'modules' subdirectory of {@link basePath}.
@@ -23,7 +23,7 @@
  * @property array $import List of aliases to be imported.
  * @property array $aliases List of aliases to be defined. The array keys are root aliases,
  * while the array values are paths or aliases corresponding to the root aliases.
- * For example,
+ * 例如，
  * <pre>
  * array(
  *    'models'=>'application.models',              // an existing alias
@@ -60,10 +60,10 @@ abstract class CModule extends CComponent
 
 
 	/**
-	 * Constructor.
-	 * @param string $id the ID of this module
-	 * @param CModule $parent the parent module (if any)
-	 * @param mixed $config the module configuration. It can be either an array or
+	 * 构造器。
+	 * @param string $id 模块的 ID
+	 * @param CModule $parent 父模块（如果有）
+	 * @param mixed $config 模块配置。It can be either an array or
 	 * the path of a PHP file returning the configuration array.
 	 */
 	public function __construct($id,$parent,$config=null)
@@ -91,11 +91,11 @@ abstract class CModule extends CComponent
 	}
 
 	/**
-	 * Getter magic method.
+	 * Getter 魔术方法。
 	 * This method is overridden to support accessing application components
 	 * like reading module properties.
-	 * @param string $name application component or property name
-	 * @return mixed the named property value
+	 * @param string $name 应用组件或属性名称
+	 * @return mixed 指定的属性值
 	 */
 	public function __get($name)
 	{
@@ -106,11 +106,11 @@ abstract class CModule extends CComponent
 	}
 
 	/**
-	 * Checks if a property value is null.
+	 * 检查一个属性值是否为空。
 	 * This method overrides the parent implementation by checking
 	 * if the named application component is loaded.
-	 * @param string $name the property name or the event name
-	 * @return boolean whether the property value is null
+	 * @param string $name 属性名称或事件名称
+	 * @return boolean 属性值是否为空
 	 */
 	public function __isset($name)
 	{
@@ -121,8 +121,8 @@ abstract class CModule extends CComponent
 	}
 
 	/**
-	 * Returns the module ID.
-	 * @return string the module ID.
+	 * 返回模块的 ID。
+	 * @return string 模块的 ID。
 	 */
 	public function getId()
 	{
@@ -130,8 +130,8 @@ abstract class CModule extends CComponent
 	}
 
 	/**
-	 * Sets the module ID.
-	 * @param string $id the module ID
+	 * 设置模块的 ID。
+	 * @param string $id 模块 ID
 	 */
 	public function setId($id)
 	{
@@ -139,8 +139,8 @@ abstract class CModule extends CComponent
 	}
 
 	/**
-	 * Returns the root directory of the module.
-	 * @return string the root directory of the module. Defaults to the directory containing the module class.
+	 * 返回模块的根目录。
+	 * @return string 模块的根目录。Defaults to the directory containing the module class.
 	 */
 	public function getBasePath()
 	{
@@ -153,10 +153,10 @@ abstract class CModule extends CComponent
 	}
 
 	/**
-	 * Sets the root directory of the module.
+	 * 设置模块的根目录。
 	 * This method can only be invoked at the beginning of the constructor.
-	 * @param string $path the root directory of the module.
-	 * @throws CException if the directory does not exist.
+	 * @param string $path 模块的根目录。
+	 * @throws CException 如果目录不存在。
 	 */
 	public function setBasePath($path)
 	{
@@ -166,8 +166,8 @@ abstract class CModule extends CComponent
 	}
 
 	/**
-	 * Returns user-defined parameters.
-	 * @return CAttributeCollection the list of user-defined parameters
+	 * 返回用户定义的参数。
+	 * @return CAttributeCollection 用户定义的参数列表
 	 */
 	public function getParams()
 	{
@@ -182,8 +182,8 @@ abstract class CModule extends CComponent
 	}
 
 	/**
-	 * Sets user-defined parameters.
-	 * @param array $value user-defined parameters. This should be in name-value pairs.
+	 * 设置用户定义的参数
+	 * @param array $value 用户定义的参数。应该设置为 name-value 对。
 	 */
 	public function setParams($value)
 	{
@@ -207,7 +207,7 @@ abstract class CModule extends CComponent
 	/**
 	 * Sets the directory that contains the application modules.
 	 * @param string $value the directory that contains the application modules.
-	 * @throws CException if the directory is invalid
+	 * @throws CException 如果该目录是无效的。
 	 */
 	public function setModulePath($value)
 	{
@@ -217,7 +217,7 @@ abstract class CModule extends CComponent
 	}
 
 	/**
-	 * Sets the aliases that are used in the module.
+	 * 设置用于在模块中使用的别名。
 	 * @param array $aliases list of aliases to be imported
 	 */
 	public function setImport($aliases)
@@ -230,7 +230,7 @@ abstract class CModule extends CComponent
 	 * Defines the root aliases.
 	 * @param array $mappings list of aliases to be defined. The array keys are root aliases,
 	 * while the array values are paths or aliases corresponding to the root aliases.
-	 * For example,
+	 * 例如，
 	 * <pre>
 	 * array(
 	 *    'models'=>'application.models',              // an existing alias
@@ -251,8 +251,8 @@ abstract class CModule extends CComponent
 	}
 
 	/**
-	 * Returns the parent module.
-	 * @return CModule the parent module. Null if this module does not have a parent.
+	 * 返回父模块。
+	 * @return CModule 父模块。Null if this module does not have a parent.
 	 */
 	public function getParentModule()
 	{
@@ -260,10 +260,10 @@ abstract class CModule extends CComponent
 	}
 
 	/**
-	 * Retrieves the named application module.
+	 * 检索指定的应用程序模块。
 	 * The module has to be declared in {@link modules}. A new instance will be created
 	 * when calling this method with the given ID for the first time.
-	 * @param string $id application module ID (case-sensitive)
+	 * @param string $id 应用程序模块的 ID (case-sensitive)
 	 * @return CModule the module instance, null if the module is disabled or does not exist.
 	 */
 	public function getModule($id)
@@ -289,7 +289,7 @@ abstract class CModule extends CComponent
 
 	/**
 	 * Returns a value indicating whether the specified module is installed.
-	 * @param string $id the module ID
+	 * @param string $id 模块 ID
 	 * @return boolean whether the specified module is installed.
 	 * @since 1.1.2
 	 */
@@ -401,7 +401,7 @@ abstract class CModule extends CComponent
 	 * Puts a component under the management of the module.
 	 * The component will be initialized by calling its {@link CApplicationComponent::init() init()}
 	 * method if it has not done so.
-	 * @param string $id component ID
+	 * @param string $id 组件 ID
 	 * @param array|IApplicationComponent $component application component
 	 * (either configuration array or instance). If this parameter is null,
 	 * component will be unloaded from the module.
@@ -456,7 +456,7 @@ abstract class CModule extends CComponent
 	}
 
 	/**
-	 * Returns the application components.
+	 * 返回应用程序组件。
 	 * @param boolean $loadedOnly whether to return the loaded components only. If this is set false,
 	 * then all components specified in the configuration will be returned, whether they are loaded or not.
 	 * Loaded components will be returned as objects, while unloaded components as configuration arrays.
@@ -472,7 +472,7 @@ abstract class CModule extends CComponent
 	}
 
 	/**
-	 * Sets the application components.
+	 * 设置应用程序组件。
 	 *
 	 * When a configuration is used to specify a component, it should consist of
 	 * the component's initial property values (name-value pairs). Additionally,
@@ -510,7 +510,7 @@ abstract class CModule extends CComponent
 
 	/**
 	 * Configures the module with the specified configuration.
-	 * @param array $config the configuration array
+	 * @param array $config 配置数组
 	 */
 	public function configure($config)
 	{
@@ -522,7 +522,7 @@ abstract class CModule extends CComponent
 	}
 
 	/**
-	 * Loads static application components.
+	 * 加载静态应用程序组件。
 	 */
 	protected function preloadComponents()
 	{
@@ -542,7 +542,7 @@ abstract class CModule extends CComponent
 	}
 
 	/**
-	 * Initializes the module.
+	 * 初始化模块。
 	 * This method is called at the end of the module constructor.
 	 * Note that at this moment, the module has been configured, the behaviors
 	 * have been attached and the application components have been registered.
