@@ -13,7 +13,7 @@
 </span>
 </div>
 
-<table class="summaryTable table table-bordered">
+<table class="summaryTable table table-striped table-bordered">
 <tr><td colspan="3">
 <div class="signature2">
 <?php echo preg_replace('/\{\{([^\{\}]*?)\|([^\{\}]*?)\}\}\(/','$2(',$method->signature); ?>

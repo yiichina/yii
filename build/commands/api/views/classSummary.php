@@ -1,4 +1,4 @@
-<table class="summaryTable docClass table table-bordered">
+<table class="summaryTable docClass table table-striped table-bordered">
 <colgroup>
 	<col class="col-name" />
 	<col class="col-value" />

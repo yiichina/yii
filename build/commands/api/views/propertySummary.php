@@ -5,7 +5,7 @@
 
 <p><a href="#" class="toggle">隐藏继承的属性</a></p>
 
-<table class="summaryTable table table-bordered">
+<table class="summaryTable table table-striped table-bordered">
 <colgroup>
 	<col class="col-property" />
 	<col class="col-type" />

@@ -1,6 +1,6 @@
 <h1>类参考</h1>
 
-<table class="summaryTable docIndex table table-bordered">
+<table class="summaryTable docIndex table table-striped table-bordered">
 <colgroup>
 	<col class="col-package" />
 	<col class="col-class" />
