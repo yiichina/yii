@@ -92,7 +92,13 @@ EOD;
 		{
 			$this->buildOnlinePages($docPath.DIRECTORY_SEPARATOR.'api',$themePath);
 			$this->buildKeywords($docPath);
+			$this->buildPackages($docPath);
 		}
+	}
+
+	protected function buildPackages($docPath)
+	{
+		file_put_contents($docPath.'/api/packages.txt',serialize($this->packages));
 	}
 
 	protected function buildKeywords($docPath)
@@ -114,7 +120,7 @@ EOD;
 					$keywords[]=$name.'.'.$method->name.'()';
 			}
 		}
-		file_put_contents($docPath.'/apiKeywords.txt',implode(',',$keywords));
+		file_put_contents($docPath.'/api/keywords.txt',implode(',',$keywords));
 	}
 
 	public function render($view,$data=null,$return=false,$layout='main')
