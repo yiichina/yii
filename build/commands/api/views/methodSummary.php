@@ -3,7 +3,7 @@
 <div class="summary docMethod">
 <h2><?php echo $protected ? '受保护的方法' : '公共方法'; ?></h2>
 
-<p><a href="#" class="toggle">Hide inherited methods</a></p>
+<p><a href="#" class="toggle">隐藏继承的方法</a></p>
 
 <table class="summaryTable table table-striped table-bordered">
 <colgroup>

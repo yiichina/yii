@@ -28,17 +28,17 @@ All Rights Reserved.<br/>
 <script type="text/javascript">
 /*<![CDATA[*/
 $("a.toggle").toggle(function(){
-	$(this).text($(this).text().replace(/Hide/,'Show'));
+	$(this).text($(this).text().replace(/隐藏/,'显示'));
 	$(this).parents(".summary").find(".inherited").hide();
 },function(){
-	$(this).text($(this).text().replace(/Show/,'Hide'));
+	$(this).text($(this).text().replace(/显示/,'隐藏'));
 	$(this).parents(".summary").find(".inherited").show();
 });
 $(".sourceCode a.show").toggle(function(){
-	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).text($(this).text().replace(/显示/,'隐藏'));
 	$(this).parents(".sourceCode").find("div.code").show();
 },function(){
-	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).text($(this).text().replace(/隐藏/,'显示'));
 	$(this).parents(".sourceCode").find("div.code").hide();
 });
 $("a.sourceLink").click(function(){
