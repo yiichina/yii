@@ -5,7 +5,7 @@
 <p>
 <a href="#" class="toggle">隐藏继承的属性</a>
 </p>
-<table class="summaryTable table table-striped table-bordered table-hover">
+<table class="summaryTable table table-striped table-bordered">
 <tr>
   <th>属性</th><th>类型</th><th>描述</th><th>被定义在</th>
 </tr>

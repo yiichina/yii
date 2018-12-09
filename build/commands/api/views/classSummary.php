@@ -1,4 +1,4 @@
-<table class="summaryTable table table-striped table-bordered table-hover">
+<table class="summaryTable table table-striped table-bordered">
 <tr>
   <th>包</th>
   <td><?php echo '{{index::'.$class->package.'|'.$class->package.'}}'; ?></td>
