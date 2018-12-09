@@ -1,8 +1,8 @@
-<h1>All Packages</h1>
+<h1>所有包</h1>
 
-<table class="summaryTable">
+<table class="summaryTable table table-bordered table-striped table-hover">
 <tr>
-  <th>Package</th><th>Class</th><th>Description</th>
+  <th>包</th><th>类</th><th>描述</th>
 </tr>
 <?php foreach($this->packages as $package=>$classes): ?>
 <?php foreach($classes as $i=>$class): ?>

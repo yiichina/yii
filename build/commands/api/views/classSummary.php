@@ -1,33 +1,33 @@
-<table class="summaryTable">
+<table class="summaryTable table table-striped table-bordered table-hover">
 <tr>
-  <th>Package</th>
+  <th>包</th>
   <td><?php echo '{{index::'.$class->package.'|'.$class->package.'}}'; ?></td>
 </tr>
 <tr>
-  <th>Inheritance</th>
+  <th>继承</th>
   <td><?php echo $this->renderInheritance($class); ?></td>
 </tr>
 <?php if(!empty($class->interfaces)): ?>
 <tr>
-  <th>Implements</th>
+  <th>实现</th>
   <td><?php echo $this->renderImplements($class); ?></td>
 </tr>
 <?php endif; ?>
 <?php if(!empty($class->subclasses)): ?>
 <tr>
-  <th>Subclasses</th>
+  <th>子类</th>
   <td><?php echo $this->renderSubclasses($class); ?></td>
 </tr>
 <?php endif; ?>
 <?php if(!empty($class->since)): ?>
 <tr>
-  <th>Since</th>
+  <th>可用自</th>
   <td><?php echo $class->since; ?></td>
 </tr>
 <?php endif; ?>
 <?php if(!empty($class->version)): ?>
 <tr>
-  <th>Version</th>
+  <th>版本</th>
   <td><?php echo $class->version; ?></td>
 </tr>
 <?php endif; ?>

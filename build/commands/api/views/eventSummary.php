@@ -1,13 +1,13 @@
 <?php if(empty($class->events)) return; ?>
 
 <div class="summary">
-<h2>Events</h2>
+<h2>事件</h2>
 <p>
-<a href="#" class="toggle">Hide inherited events</a>
+<a href="#" class="toggle">隐藏继承的事件</a>
 </p>
-<table class="summaryTable">
+<table class="summaryTable table table-striped table-bordered table-hover">
 <tr>
-  <th>Event</th><th>Description</th><th>Defined By</th>
+  <th>事件</th><th>描述</th><th>被定义在</th>
 </tr>
 <?php foreach($class->events as $event): ?>
 <tr<?php echo $event->isInherited?' class="inherited"':''; ?> id="<?php echo $event->name; ?>">
