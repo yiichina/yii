@@ -285,7 +285,7 @@ EOD;
 		else
 		{
 			if($matches[1]==='index')
-				return "<a href=\"/doc/api/\">{$matches[2]}</a>";
+				return "<a href=\"/doc/api\">{$matches[2]}</a>";
 			else
 				return "<a href=\"/doc/api/{$matches[1]}\">{$matches[2]}</a>";
 		}
