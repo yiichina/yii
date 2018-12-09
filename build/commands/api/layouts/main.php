@@ -13,7 +13,7 @@
 <div id="page">
 
 <div id="header">
-<a href="http://www.yiiframework.com">Yii Framework</a> v<?php echo Yii::getVersion(); ?> Class Reference
+<a href="http://www.yiiframework.com">Yii Framework</a> v<?php echo Yii::getVersion(); ?> 类参考
 </div><!-- end of header -->
 
 <div id="content">
@@ -28,11 +28,11 @@ All Rights Reserved.<br/>
 <script type="text/javascript">
 /*<![CDATA[*/
 $("a.toggle").toggle(function(){
-	$(this).text($(this).text().replace(/Hide/,'Show'));
+	$(this).text($(this).text().replace(/隐藏/,'显示'));
 	var a=$(this).parents(".summary");
 	a.find(".inherited").hide();
 },function(){
-	$(this).text($(this).text().replace(/Show/,'Hide'));
+	$(this).text($(this).text().replace(/显示/,'隐藏'));
 	$(this).parents(".summary").find(".inherited").show();
 });
 /*]]>*/
