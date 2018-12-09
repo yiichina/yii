@@ -1,19 +1,19 @@
 <?php if(!$class->nativeMethodCount) return; ?>
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 
 <?php foreach($class->methods as $method): ?>
 <?php if($method->isInherited) continue; ?>
 <div class="detailHeader" id="<?php echo $this->fixMethodAnchor($method->definedBy,$method->name).'-detail'; ?>">
 <?php echo $method->name; ?>()
 <span class="detailHeaderTag">
-method
+方法
 <?php if(!empty($method->since)): ?>
-(available since v<?php echo $method->since; ?>)
+（自版本 v<?php echo $method->since; ?> 可用）
 <?php endif; ?>
 </span>
 </div>
 
-<table class="summaryTable">
+<table class="summaryTable table table-bordered">
 <tr><td colspan="3">
 <div class="signature2">
 <?php echo preg_replace('/\{\{([^\{\}]*?)\|([^\{\}]*?)\}\}\(/','$2(',$method->signature); ?>

@@ -1,13 +1,13 @@
-<h1>Class Reference</h1>
+<h1>类参考</h1>
 
-<table class="summaryTable docIndex">
+<table class="summaryTable docIndex table table-bordered">
 <colgroup>
 	<col class="col-package" />
 	<col class="col-class" />
 	<col class="col-description" />
 </colgroup>
 <tr>
-  <th>Package</th><th>Class</th><th>Description</th>
+  <th>包</th><th>类</th><th>描述</th>
 </tr>
 <?php foreach($this->packages as $package=>$classes): ?>
 <?php foreach($classes as $i=>$class): ?>

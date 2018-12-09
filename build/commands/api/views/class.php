@@ -1,14 +1,14 @@
 <h1><?php echo $class->name; ?></h1>
 <div id="nav">
-{{index|All Packages}}
+{{index|所有包}}
 <?php if(!empty($class->properties)): ?>
-| <a href="#properties">Properties</a>
+| <a href="#properties">属性</a>
 <?php endif; ?>
 <?php if(!empty($class->methods)): ?>
-| <a href="#methods">Methods</a>
+| <a href="#methods">方法</a>
 <?php endif; ?>
 <?php if(!empty($class->events)): ?>
-| <a href="#events">Events</a>
+| <a href="#events">事件</a>
 <?php endif; ?>
 </div>
 

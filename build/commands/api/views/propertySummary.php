@@ -1,11 +1,11 @@
 <?php if($protected && !$class->protectedPropertyCount || !$protected && !$class->publicPropertyCount) return; ?>
 
 <div class="summary docProperty">
-<h2><?php echo $protected ? 'Protected Properties' : 'Public Properties'; ?></h2>
+<h2><?php echo $protected ? '受保护的属性' : '公共属性'; ?></h2>
 
-<p><a href="#" class="toggle">Hide inherited properties</a></p>
+<p><a href="#" class="toggle">隐藏继承的属性</a></p>
 
-<table class="summaryTable">
+<table class="summaryTable table table-bordered">
 <colgroup>
 	<col class="col-property" />
 	<col class="col-type" />
@@ -13,7 +13,7 @@
 	<col class="col-defined" />
 </colgroup>
 <tr>
-  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+  <th>属性</th><th>类型</th><th>描述</th><th>被定义在</th>
 </tr>
 <?php foreach($class->properties as $property): ?>
 <?php if($protected && $property->isProtected || !$protected && !$property->isProtected): ?>

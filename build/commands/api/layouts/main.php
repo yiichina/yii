@@ -13,7 +13,7 @@
 <div id="apiPage">
 
 <div id="apiHeader">
-<a href="http://www.yiiframework.com">Yii Framework</a> v<?php echo Yii::getVersion(); ?> Class Reference
+<a href="http://www.yiiframework.com">Yii Framework</a> v<?php echo Yii::getVersion(); ?> 类参考
 </div><!-- end of header -->
 
 <div id="content">
