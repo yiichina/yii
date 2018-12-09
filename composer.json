@@ -75,6 +75,9 @@
 	"require": {
 		"php": ">=5.1.0"
 	},
+	"suggest": {
+		"ext-mcrypt": "Required by encrypt and decrypt methods of CSecurityManager"
+	},
 	"autoload": {
 		"classmap" : [
 			"framework/YiiBase.php",
@@ -82,7 +85,8 @@
 		]
 	},
 	"require-dev": {
-		"phpunit/phpunit": "~3.7",
-		"phpunit/phpunit-selenium": "~1.4.0"
+		"phpunit/phpunit": "~4.8.34",
+		"phpunit/phpunit-selenium": "~1.4.0",
+		"phing/phing": "2.*"
 	}
 }

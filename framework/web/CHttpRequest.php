@@ -1027,6 +1027,21 @@ class CHttpRequest extends CApplicationComponent
 		return empty($preferredAcceptTypes) ? false : $preferredAcceptTypes[0];
 	}
 
+    /**
+     * String compare function used by usort.
+     * Included to circumvent the use of closures (not supported by PHP 5.2) and create_function (deprecated since PHP 7.2.0)
+     * @param array $a
+     * @param array $b
+     * @return int -1 (a>b), 0 (a==b), 1 (a<b)
+     */
+    private function stringCompare($a, $b)
+    {
+        if ($a[0] == $b[0]) {
+            return 0;
+        }
+        return ($a[0] < $b[0]) ? 1 : -1;
+    }
+
 	/**
 	 * Returns an array of user accepted languages in order of preference.
 	 * The returned language IDs will NOT be canonicalized using {@link CLocale::getCanonicalID}.
@@ -1051,7 +1066,7 @@ class CHttpRequest extends CApplicationComponent
 						$languages[]=array((float)$q,$matches[1][$i]);
 				}
 
-				usort($languages,create_function('$a,$b','if($a[0]==$b[0]) {return 0;} return ($a[0]<$b[0]) ? 1 : -1;'));
+				usort($languages, array($this, 'stringCompare'));
 				foreach($languages as $language)
 					$sortedLanguages[]=$language[1];
 			}
@@ -1303,7 +1318,10 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	protected function createCsrfCookie()
 	{
-		$cookie=new CHttpCookie($this->csrfTokenName,sha1(uniqid(mt_rand(),true)));
+		$securityManager=Yii::app()->getSecurityManager();
+		$token=$securityManager->generateRandomBytes(32);
+		$maskedToken=$securityManager->maskToken($token);
+		$cookie=new CHttpCookie($this->csrfTokenName,$maskedToken);
 		if(is_array($this->csrfCookie))
 		{
 			foreach($this->csrfCookie as $name=>$value)
@@ -1333,21 +1351,24 @@ class CHttpRequest extends CApplicationComponent
 			switch($method)
 			{
 				case 'POST':
-					$userToken=$this->getPost($this->csrfTokenName);
+					$maskedUserToken=$this->getPost($this->csrfTokenName);
 				break;
 				case 'PUT':
-					$userToken=$this->getPut($this->csrfTokenName);
+					$maskedUserToken=$this->getPut($this->csrfTokenName);
 				break;
 				case 'PATCH':
-					$userToken=$this->getPatch($this->csrfTokenName);
+					$maskedUserToken=$this->getPatch($this->csrfTokenName);
 				break;
 				case 'DELETE':
-					$userToken=$this->getDelete($this->csrfTokenName);
+					$maskedUserToken=$this->getDelete($this->csrfTokenName);
 			}
 
-			if (!empty($userToken) && $cookies->contains($this->csrfTokenName))
+			if (!empty($maskedUserToken) && $cookies->contains($this->csrfTokenName))
 			{
-				$cookieToken=$cookies->itemAt($this->csrfTokenName)->value;
+				$securityManager=Yii::app()->getSecurityManager();
+				$maskedCookieToken=$cookies->itemAt($this->csrfTokenName)->value;
+				$cookieToken=$securityManager->unmaskToken($maskedCookieToken);
+				$userToken=$securityManager->unmaskToken($maskedUserToken);
 				$valid=$cookieToken===$userToken;
 			}
 			else
