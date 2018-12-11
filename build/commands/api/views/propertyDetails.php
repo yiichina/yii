@@ -6,7 +6,7 @@
 <?php echo $property->name; ?>
 <span class="detailHeaderTag">
 属性
-<?php if($property->readOnly) echo ' <em>read-only</em> '; ?>
+<?php if($property->readOnly) echo ' <em>只读</em> '; ?>
 <?php if(!empty($property->since)): ?>
 （自版本 v<?php echo $property->since; ?> 可用）
 <?php endif; ?>
